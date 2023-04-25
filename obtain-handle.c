@@ -47,5 +47,5 @@ int handle_print(const char *fmt, int *ind, va_list list, char buffer[],
 		unknow_len += write(1, &fmt[*ind], 1);
 		return (unknow_len);
 	}
-	 (printed_chars);
+	return (printed_chars);
 }
