@@ -9,18 +9,18 @@
  */
 int get_size(const char *format, int *t)
 {
-	int curr_f = *t + 1;
+	int curr_t = *t + 1;
 	int size = 0;
 
-	if (format[curr_f] == 'l')
+	if (format[curr_t] == 'l')
 		size = S_LONG;
-	else if (format[curr_f] == 'h')
+	else if (format[curr_t] == 'h')
 		size = S_SHORT;
 
 	if (size == 0)
-		*t = curr_f - 1;
+		*t = curr_t - 1;
 	else
-		*t = curr_f;
+		*t = curr_t;
 
 	return (size);
 }
