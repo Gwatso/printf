@@ -6,7 +6,7 @@
  * @q: take a parameter.
  * Return: Flags
  */
-int get_flags(const char *format, int *q)
+int get_flags(const char *format, int *ptrq)
 {
 	/* - + 0 # ' ' */
 	/* 1 2 4 8  16 */
@@ -15,7 +15,7 @@ int get_flags(const char *format, int *q)
 	const char FLAGS_CH[] = {'-', '+', '0', '#', ' ', '\0'};
 	const int FLAGS_ARR[] = {F_MINUS, F_PLUS, F_ZERO, F_HASH, F_SPACE, 0};
 
-	for (curr_q = *q + 1; format[curr_q] != '\0'; curr_q++)
+	for (curr_q = *ptrq + 1; format[curr_q] != '\0'; curr_q++)
 	{
 		for (q = 0; FLAGS_CH[q] != '\0'; q++)
 			if (format[curr_q] == FLAGS_CH[q])
@@ -28,7 +28,7 @@ int get_flags(const char *format, int *q)
 			break;
 	}
 
-	*q = curr_q - 1;
+	*ptrq = curr_q - 1;
 
 	return (flags);
 }
