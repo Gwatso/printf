@@ -94,9 +94,8 @@ int write_number(int is_negative, int ind, char buffer[],
 int write_num(int ind, char buffer[],
 	int flags, int width, int prec,
 	int length, char padd, char extra_b)
-{
-	int m, padd_start = 1;
-	int i =0;
+{	int m, padd_start = 1;
+	int i = 0;
 
 	if (prec == 0 && ind == BUFF_SIZE - 2 && buffer[ind] == '0' && width == 0)
 		return (0); /* printf(".0d", 0)  no char is printed */
@@ -153,8 +152,7 @@ int write_num(int ind, char buffer[],
 int write_unsgnd(int is_negative, int ind,
 	char buffer[],
 	int flags, int width, int precision, int size)
-{
-	/* The number is stored at the bufer's right and starts at position i */
+{	/* The number is stored at the bufer's right and starts at position i */
 	int length = BUFF_SIZE - ind - 1;
 	char padd = ' ';
 	int m;
